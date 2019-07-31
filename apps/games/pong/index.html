@@ -1,0 +1,119 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <title>Pong!</title> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+  <link href="pong.css" media="screen, print" rel="stylesheet" type="text/css" /> 
+  
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		
+		<link rel="stylesheet" type="text/css" href="css/dialog.css" />
+		
+		<link rel="stylesheet" type="text/css" href="css/dialog-don.css" />
+		<script src="js/modernizr.custom.js"></script>
+		
+</head> 
+ 
+<body> 
+
+
+<div id="somedialog" class="dialog">
+					<div class="dialog__overlay"></div>
+					<div class="dialog__content">
+					<img src="pic.PNG"/>
+					<div class='description'>
+     
+      <p>
+        Press <b>1</b> for a single player game.<br>
+        Press <b>2</b> for a double player game.<br>
+       
+      <p>
+        Player 1 moves using the <b>Q</b> and <b>A</b> keys.<br>
+        Player 2 moves using the <b>P</b> and <b>L</b> keys.
+      </p>
+      <p>
+        <b>Esc</b> - to abandon a game.
+      </p>
+    </div>
+
+    <div class='settings'>
+      <label for='sound'>Sound: </label>
+      <input type='checkbox' id='sound'>
+    </div>
+
+    <div class='settings'>
+      <label for='stats'>Stats: </label>
+      <input type='checkbox' id='stats' checked>
+    </div>
+
+    <div class='settings'>
+      <label for='footprints'>Footprints: </label>
+      <input type='checkbox' id='footprints'>
+    </div>
+
+    <div class='settings'>
+      <label for='predictions'>Predictions: </label>
+      <input type='checkbox' id='predictions'>
+    </div>
+	<br/>
+<div><button class="action" data-dialog-close>Close</button></div>
+  </div>
+
+						
+					</div>
+				</div>
+  
+
+   
+
+   
+<div id="sidebar">
+<div class="button-wrap"><button data-dialog="somedialog" class="trigger"  id="sad">Pong</button></div></div>
+    
+  <canvas id="game">
+    <div id="unsupported">
+      Sorry, this example cannot be run because your browser does not support the &lt;canvas&gt; element
+    </div>
+  </canvas>
+  
+  <script src="game.js" type="text/javascript"></script> 
+  <script src="pong.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  Game.ready(function() {
+
+    var size        = document.getElementById('size');
+    var sound       = document.getElementById('sound');
+    var stats       = document.getElementById('stats');
+    var footprints  = document.getElementById('footprints');
+    var predictions = document.getElementById('predictions');
+
+    var pong = Game.start('game', Pong, {
+      sound:       sound.checked,
+      stats:       stats.checked,
+      footprints:  footprints.checked,
+      predictions: predictions.checked
+    });
+
+    Game.addEvent(sound,       'change', function() { pong.enableSound(sound.checked);           });
+    Game.addEvent(stats,       'change', function() { pong.showStats(stats.checked);             });
+    Game.addEvent(footprints,  'change', function() { pong.showFootprints(footprints.checked);   });
+    Game.addEvent(predictions, 'change', function() { pong.showPredictions(predictions.checked); });
+
+  });
+  </script>
+<script src="js/classie.js"></script>
+		<script src="js/dialogFx.js"></script>
+		<script>
+			(function() {
+
+				var dlgtrigger = document.querySelector( '[data-dialog]' ),
+					somedialog = document.getElementById( dlgtrigger.getAttribute( 'data-dialog' ) ),
+					dlg = new DialogFx( somedialog );
+
+				dlgtrigger.addEventListener( 'click', dlg.toggle.bind(dlg) );
+
+			})();
+		</script>
+</body> 
+</html>

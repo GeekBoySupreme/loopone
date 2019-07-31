@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>	
+<head>
+<style>
+body{
+text-align:center;
+background-image:url('clock.jpg');}
+#txt{
+font-size:55px;
+font-family:Segoe UI Light;
+color:white;
+font-weight:150;}
+#timer{
+color:white;
+font-size:30px;
+font-family:Segoe UI Light;
+background-color:rgb(0,64,128);
+padding:10px;
+border-radius:50px;
+width:500px;
+margin-right:auto;
+margin-left:auto;}
+</style>
+<script>
+function startTime() {
+    var today=new Date();
+    var h=today.getHours();
+    var m=today.getMinutes();
+    var s=today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = h+":"+m+":"+s;
+    var t = setTimeout(function(){startTime()},500);
+}
+
+function checkTime(i) {
+    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+<img src="hello.png"/>
+<div id="txt"></div><br/>
+<p id="timer">GMT+5:30       INDIA        Kolkata</p>
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Contact Book</title>
+	<style>
+	#btnsave{
+	color:white;
+	font-size:26px;
+	paddine:5px;
+	border-radius:2px;
+	background-color:rgb(0,128,255);}</style>
+    <link href="Content/default.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.8.3.min.js"></script>
+    <script src="Scripts/ContactsLibrary.js"></script>
+	<style>
+	body{
+	text-align:center;}
+	</style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <hgroup id="headerText">
+               
+            </hgroup>
+        </header>
+        <div role="main">
+            <table id="contacts">
+			<img src="pic.png"/>
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div id="editContact">
+                <h2 id="currentAction"></h2>
+                <div>
+                    <label id="name" for="firstName">First Name-----:</label><br/>
+                    <input type="text" id="firstName" name="firstName" />
+                </div>
+                <div>
+                    <label id="name" for="lastName">Last Name-----:</label><br/>
+                    <input type="text" id="lastName" name="lastName" />
+                </div>
+                <div>
+                    <label id="name" for="email">Email Address-:</label><br/>
+                    <input type="email" id="email" name="email" />
+                </div>
+                <div>
+                    <label id="name" for="phoneNumber">Phone Number:</label><br/>
+                    <input type="text" id="phoneNumber" name="phoneNumber" />
+                </div>
+				<br/>
+                <div class="buttons">
+                    <button id="btnSave" name="save">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

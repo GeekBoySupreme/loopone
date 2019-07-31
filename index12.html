@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Loop x</title>
+
+		
+		<link rel="stylesheet" type="text/css" href="monster/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="monster/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="monster/css/style12.css" />
+		<script src="monster/js/snap.svg-min.js"></script>
+  		<script src="monster/js/modernizr.custom.js"></script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="monster/big/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="monster/big/css/component.css" />
+		
+		
+		<script>
+function startTime() {
+    var today=new Date();
+	var day=today.getDay();
+	var mon=today.getMonth();
+	var date=today.getDate();
+    var h=today.getHours();
+    var m=today.getMinutes();
+    var s=today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+	var day1=""; var month="";
+    document.getElementById('txt').innerHTML = h+":"+m;
+	 
+    var t = setTimeout(function(){startTime()},500);
+	switch(day){
+	case 0:
+	day1="Sunday";
+	break;
+	case 1:
+	day1="Monday";
+	break;
+	case 2:
+	day1="Tuesday";
+	break;
+	case 3:
+	day1="Wednesday";
+	break;
+	case 4:
+	day1="Thursday";
+	break;
+	case 5:
+	day1="Friday";
+	break;
+	case 6:
+	day1="Saturday";
+	break;}
+	document.getElementById('da').innerHTML =day1;
+	switch(mon){
+	case 0:
+	month="January";
+	break;
+	case 1:
+	month="February";
+	break;
+	case 2:
+	month="March";
+	break;
+	case 3:
+	month="April";
+	break;
+	case 4:
+	month="May";
+	break;
+	case 5:
+	month="June";
+	break;
+	case 6:
+	month="July";
+	break;
+	case 7:
+	month="August";
+	break;
+	case 8:
+	month="September";
+	break;
+	case 9:
+	month="October";
+	break;
+	case 10:
+	month="November";
+	break;
+	case 11:
+	month="December";
+	break;}
+	
+	
+	document.getElementById('day').innerHTML =month+" "+date;
+	document.getElementById('dater').innerHTML =date;
+	document.getElementById('month').innerHTML =month;
+	
+}
+
+function checkTime(i) {
+    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="monster/window/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="monster/window/css/component.css" />
+		<link rel="stylesheet" type="text/css" href="monster/headers.css" />
+		
+		
+		
+	</head>
+	<body onload="startTime()">
+		<div class="mod-modal mod-effect-111" id="modal-111">
+			<div class="mod-content">
+				<div id="clockheader"><p id="video">Photos</p><img class="mod-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+					
+						</ul>
+
+				</div>
+			</div>
+		</div>
+		
+			<!-- Top Navigation -->
+					<div class="md-modal md-effect-1" id="modal-1">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Contacts</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-2" id="modal-2">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Explorer</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-3" id="modal-3">
+			<div class="md-content">
+			
+				<div id="videoheader"><p id="video">Music</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-4" id="modal-4">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Camera</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-5" id="modal-5">
+			<div class="md-content">
+			
+				<div id="mapheader"><p id="maps">Maps</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+						<iframe src="apps/maps.HTML" frameborder="0" width="100%" height="600px"></iframe>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-6" id="modal-6">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Speech</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+						<iframe src="apps/speech/index.HTML" frameborder="0" width="100%" height="600px" scrolling="no"></iframe>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-7" id="modal-7">
+			<div class="md-content">
+			
+				<div id="mapheader"><p id="maps">Gmail</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul><br/><br/><br/>
+						<img src="monster/img/gmail1.png" width="500px" /><br/><br/>
+						<p id="note"> Aw snap! Sorry.. We were unable to pull up an application for this.. and we genuinely regret it. But we are offering you an alternative way to open.
+						Press F11, that is get out of the fullscreen mode and press the button below..... You'll get what you want... =D</p>
+						<br/><br/><br/>
+						<input type="button" value="Open Gmail" onclick="window.open('http://www.Gmail.com')" id="maps" />
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-8" id="modal-8">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Messenger</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul><br/><br/><br/>
+						<img src="monster/img/fb1.png" width="500px" /><br/><br/>
+						<p id="note"> Aw Snap! Sorry.. We were unable to pull up an application for this.. and we genuinely regret it. But we are offering you an alternative way to open.
+						Press F11, that is get out of the fullscreen mode and press the button below..... You'll get what you want... =D</p>
+						<br/><br/><br/>
+						<input type="button" value="Open facebook" onclick="window.open('http://www.facebook.com')" id="video" />
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-9" id="modal-9">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">twitter</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul><br/><br/><br/>
+						<img src="monster/img/twitter1.png" width="500px" /><br/><br/>
+						<p id="note"> Aw snap! Sorry.. We were unable to pull up an application for this.. and we genuinely regret it. But we are offering you an alternative way to open.
+						Press F11, that is get out of the fullscreen mode and press the button below..... You'll get what you want... =D</p>
+						<br/><br/><br/>
+						<input type="button" value="Open Twitter" onclick="window.open('http://www.twitter.com')" id="video" />
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-10" id="modal-10">
+			<div class="md-content">
+			
+				<div id="mapheader"><p id="maps">Google+</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul><br/><br/><br/>
+						<img src="monster/img/g+1.png" width="500px" /><br/><br/>
+						<p id="note"> Aw snap! Sorry.. We were unable to pull up an application for this.. and we genuinely regret it. But we are offering you an alternative way to open.
+						Press F11, that is get out of the fullscreen mode and press the button below..... You'll get what you want... =D</p>
+						<br/><br/><br/>
+						<input type="button" value="Open Google+" onclick="window.open('http://www.plus.google.com')" id="maps" />
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-11" id="modal-11">
+			<div class="md-content">
+			
+				<div id="videoheader"><p id="video">Videos</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-12" id="modal-12">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Earth</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-13" id="modal-13">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Hextris</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-14" id="modal-14">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Pacman</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+					
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-15" id="modal-15">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Hangman</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					<ul>
+						
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-16" id="modal-16">
+			<div class="md-content">
+			
+				<div id="videoheader"><p id="video">Aviator</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					<ul>
+						<iframe src="apps/games/aviator/index.HTML" frameborder="0" width="100%" height="600px" scrolling="none"></iframe>
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-17" id="modal-17">
+			<div class="md-content">
+			
+				<div id="mapheader"><p id="maps">2048</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					<ul>
+						<iframe src="apps/games/2048/index.HTML" frameborder="0" width="100%" height="600px" scrolling="none"></iframe>
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-18" id="modal-18">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Clumsy Bird</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-19" id="modal-19">
+			<div class="md-content">
+			
+				<div id="videoheader"><p id="video">Pong</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+						<iframe src="apps/games/pong/index.HTML" frameborder="0" width="100%" height="600px" scrolling="no"></iframe>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-20" id="modal-20">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Joy</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+						<iframe src="apps/joybot/index.HTML" frameborder="0" width="100%" height="600px" scrolling="no"></iframe>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-21" id="modal-21">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Clock</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+						<iframe src="apps/timer/time.HTML" frameborder="0" width="100%" height="600px" scrolling="no"></iframe>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="md-modal md-effect-22" id="modal-22">
+			<div class="md-content">
+			
+				<div id="clcckheader"><p id="video">Healthkit</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+					
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-23" id="modal-23">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Calculator</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul>
+						<iframe src="apps/calculator/calc.HTML" frameborder="0" width="100%" height="600px" scrolling="no"></iframe>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-24" id="modal-24">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Settings</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul><br/><br/><br/>
+						<img src="monster/logos/settings.png"  /><br/><br/>
+						<p id="note"> Haha! The Settings app isn't a full-fledged System-tuning app yet. so you can't modify much now. But if you are a coder or hacker, this shouldn't stop you. XD<br/>
+						</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-25" id="modal-25">
+			<div class="md-content">
+			
+				<div id="hangoutheader"><p id="hangout">Hangout</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					
+					<ul><br/><br/><br/>
+						<img src="monster/img/hangout1.png" width="500px" /><br/><br/>
+						<p id="note"> Aw Snap! Sorry.. We were unable to pull up an application for this.. and we genuinely regret it. But we are offering you an alternative way to open.
+						Press F11, that is get out of the fullscreen mode and press the button below..... You'll get what you want... =D</p>
+						<br/><br/><br/>
+						<input type="button" value="Open Hangout" onclick="window.open('https://hangouts.google.com/')" id="hangout" />
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-26" id="modal-26">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Gatekeeper</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					<ul>
+						
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-27" id="modal-27">
+			<div class="md-content">
+			
+				<div id="clockheader"><p id="video">Calender</p><img class="md-close" src="monster/window/close.png"/></div>
+				<div>
+					<ul>
+						
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+		
+			<br/>
+			<br/>
+			<div id="day"></div>
+			<div id="txt"></div>
+			<div id="da"></div>
+			<p id="google"><img onclick="alert('The search Feature is currently unavailable')" src="monster/logos/google.png"/></p>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				
+				<p id="dock"><a ><img class="md-trigger" data-modal="modal-7" src="monster/logos/gmail.png" id="spe"/></a>
+				<a ><img class="md-trigger" data-modal="modal-1" src="monster/logos/contacts.png" id="spe"/></a>
+				<a ><img class="md-trigger" data-modal="modal-6" src="monster/logos/voice.png" id="spe"/></a>
+				<a ><img class="md-trigger" data-modal="modal-3" src="monster/logos/music.png" id="spe"/></a>
+			<img id="trigger-overlay" src="monster/logos/loop.PNG"/>
+			<a ><img class="md-trigger" data-modal="modal-2" src="monster/logos/aura.png" id="spe"/></a>
+			<a ><img class="md-trigger" data-modal="modal-4" src="monster/logos/camera.png" id="spe"/></a>
+			<a ><img class="md-trigger" data-modal="modal-5" src="monster/logos/maps.png" id="spe"/></a>
+			<a ><img class="md-trigger" data-modal="modal-8" src="monster/logos/messenger.png" id="spe"/></a></p>
+			
+		<!-- /container -->
+		<!-- open/close -->
+		<div class="overlay overlay-scale">
+			<button type="button" class="overlay-close">Close</button>
+			<nav>
+				<ul>
+					<li><a href="#">Favourites</a><p id="tiler">
+					<img class="mod-trigger" data-modal="modal-111" src="monster/logos/tiles/photos.png" id="photos" title="Photos">
+					<img class="md-trigger" data-modal="modal-8" src="monster/logos/tiles/messenger.png" id="messenger" title="Messenger"/>
+					
+					<img class="md-trigger" data-modal="modal-9" src="monster/logos/tiles/twitter.png" id="twitter" title="Twitter">
+					<img class="md-trigger" data-modal="modal-10" src="monster/logos/tiles/google++.png" id="g+" title="Google+"/>
+					<img class="md-trigger" data-modal="modal-11" src="monster/logos/tiles/movie.png" id="movies" title="movies"/>
+					<img class="md-trigger" data-modal="modal-5" src="monster/logos/tiles/maps.png" id="map" title="stylophone">
+					
+						
+					<img class="md-trigger" data-modal="modal-12" src="monster/logos/tiles/earth.jpg" id="earth"/>
+					<img class="md-trigger" data-modal="modal-21" src="monster/logos/time.png" id="clock">
+					<img class="md-trigger" data-modal="modal-27" src="monster/logos/calender.png" id="calender"></p></li>
+					<br/>
+					<br/><br/>
+					<li><a href="#">Games</a>
+					<p id="tiler">
+					<img class="md-trigger" data-modal="modal-13" src="monster/logos/hextris.jpg" id="hextris" />
+					<img class="md-trigger" data-modal="modal-14" src="monster/logos/pacman.png" id="pacman"/>
+					
+					<img class="md-trigger" data-modal="modal-15" src="monster/logos/hangman.png" id="hangman"/>
+					<img class="md-trigger" data-modal="modal-16" src="monster/logos/aviator.png" id="aviator"/>
+					<img class="md-trigger" data-modal="modal-17" src="monster/logos/tiles/2048.png" id="2048"/>
+					<img class="md-trigger" data-modal="modal-18" src="monster/logos/bird.png" id="bird"/>
+					<img class="md-trigger" data-modal="modal-19" src="monster/logos/tiles/pong.jpg" id="pong"/></p></li><br/><br/><br/>
+					<li><a href="#">Others</a>
+					<p id="tiler">
+					
+					
+	
+	
+					<img class="md-trigger" data-modal="modal-20" src="monster/logos/sam.png" id="sam"/>
+					<img class="md-trigger" data-modal="modal-6" src="monster/logos/tiles/voice.png" id="voice"/>
+					<img class="md-trigger" data-modal="modal-22" src="monster/logos/heart.png" id="healthkit"/>
+					<img class="md-trigger" data-modal="modal-23" src="monster/logos/calculator.png" id="calculator"/>
+					<img class="md-trigger" data-modal="modal-24" src="monster/logos/set.png" id="settings"/>
+					
+					<img class="md-trigger" data-modal="modal-2" src="monster/logos/tiles/aura.png" id="aura"/>
+					<img class="md-trigger" data-modal="modal-26" src="monster/logos/tiles/gatekeeper.png" id="gatekeeper"/>
+					<img class="md-trigger" data-modal="modal-25" src="monster/logos/hangouts.png" id="hangouts"/>
+					<img id="googler"  width="45px"  src="monster/logos/google.png" id="google" onclick="alert('The search Feature is currently unavailable')"/>
+				</ul>
+			</nav>
+		</div>
+		
+		
+		<div class="md-overlay"></div>
+		<script src="monster/js/classie.js"></script>
+		<script src="monster/js/demo12.js"></script>
+		<script src="monster/window/js/classie.js"></script>
+		<script src="monster/window/js/modalEffects.js"></script>
+
+		<!-- for the blur effect -->
+		<!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+		<script>
+			// this is important for IEs
+			var polyfilter_scriptpath = '/js/';
+		</script>
+		<script src="monster/window/js/cssParser.js"></script>
+		<script src="monster/window/js/css-filters-polyfill.js"></script>
+		
+		<script src="monster/big/js/classie.js"></script>
+		<script src="monster/big/js/modalEffects.js"></script>
+
+		<!-- for the blur effect -->
+		<!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+		<script>
+			// this is important for IEs
+			var polyfilter_scriptpath = '/js/';
+		</script>
+		<script src="monster/big/js/cssParser.js"></script>
+		<script src="monster/big/js/css-filters-polyfill.js"></script>
+		
+	</body>
+</html>

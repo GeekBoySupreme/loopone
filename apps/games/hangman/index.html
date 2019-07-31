@@ -1,0 +1,177 @@
+<html>
+<head>
+<title> lollipop</title>
+<style type="text/CSS">
+body{text-align:center;
+color:rgb(0,87,174);
+font-family:Segoe UI Light; font-size:28px;
+font-weight:300;}
+a{
+color:rgb(0,74,179);
+background-color:rgb(242,232,191);
+padding:10px;
+text-decoration:none;
+border-radius:3px;}
+a:hover,a:focus{
+color:rgb(0,255,255);}
+input{
+border:none;
+border-bottom:1px solid rgb(0,74,179);
+font-size:20px
+p{
+color:rgb(0,87,174);
+font-family:Segoe UI Light;}
+</style>
+
+<script type="text/javascript">
+
+var can_play = true;
+var words = new Array("CAT", "DOG", "MOUSE", "RABBIT", "HORSE", "MISSISSIPPI","GIGANTIC","KOLKATA","BATTLE","HALO","CRISIS","WARSHIP","WICKET","AMMO","HORRIBLE", "GRANDMA","DWARF","STUPID","HANGMAN","CORN","LIFE","VIOLIN","PIANO","SYMPHONY","CHORD","GUITAR","ELF","FRIGHTENING","SUNSHINE","OLYMPUS","HAMARTIA","AFFLICTION");
+
+var to_guess = "";
+var display_word = "";
+var used_letters = "";
+var wrong_guesses = 0;
+
+
+function selectLetter(l)
+{
+if (can_play == false)
+{
+return;
+}
+
+if (used_letters.indexOf(l) != -1)
+{
+return;
+}
+	
+used_letters += l;
+document.game.usedLetters.value = used_letters;
+	
+if (to_guess.indexOf(l) != -1)
+{
+ // correct letter guess
+pos = 0;
+temp_mask = display_word;
+
+
+while (to_guess.indexOf(l, pos) != -1)
+{
+pos = to_guess.indexOf(l, pos);			
+end = pos + 1;
+
+start_text = temp_mask.substring(0, pos);
+end_text = temp_mask.substring(end, temp_mask.length);
+
+temp_mask = start_text + l + end_text;
+pos = end;
+}
+
+display_word = temp_mask;
+document.game.displayWord.value = display_word;
+		
+if (display_word.indexOf("#") == -1)
+{
+// won
+alert("Well done, you have won!");
+can_play = false;
+}
+}
+else
+{
+// incorrect letter guess
+wrong_guesses += 1;
+eval("document.hm.src=\"hm" + wrong_guesses + ".jpg\"");
+		
+if (wrong_guesses == 10)
+{
+// lost
+alert("Sorry, you have lost!");
+can_play = false;
+}
+}
+}
+
+function reset()
+{
+selectWord();
+document.game.usedLetters.value = "";
+used_letters = "";
+wrong_guesses = 0;
+document.hm.src="hmstart.jpg";
+}
+
+function selectWord()
+{
+can_play = true;
+random_number = Math.round(Math.random() * (words.length - 1));
+to_guess = words[random_number];
+//document.game.theWord.value = to_guess;
+	
+// display masked word
+masked_word = createMask(to_guess);
+document.game.displayWord.value = masked_word;
+display_word = masked_word;
+}
+
+function createMask(m)
+{
+mask = "";
+word_lenght = m.length;
+
+
+for (i = 0; i < word_lenght; i ++)
+{
+mask += "#";
+}
+return mask;
+}
+
+</script>
+</head>
+
+<body onLoad="reset(); return true;">
+
+
+<img src="hmstart.jpg"  width="70%"  height="40%" name="hm">
+<form name="game">
+<p>Guess d Word: <input type="text" name="displayWord" size="25"></br>
+Used Letters: <input type="text" name="usedLetters" size="25"></p>
+</form>
+
+<p><a href="javascript:selectLetter('A');" id="letter">A</a>  
+<a href="javascript:selectLetter('B');" id="letter">B</a>  
+<a href="javascript:selectLetter('C');" id="letter">C</a>  
+<a href="javascript:selectLetter('D');" id="letter">D</a>  
+<a href="javascript:selectLetter('E');" id="letter">E</a>  
+<a href="javascript:selectLetter('F');" id="letter">F</a>  
+<a href="javascript:selectLetter('G');" id="letter">G</a>  
+<a href="javascript:selectLetter('H');" id="letter">H</a>  
+<a href="javascript:selectLetter('I');" id="letter">I</a>  
+<a href="javascript:selectLetter('J');" id="letter">J</a>  
+<a href="javascript:selectLetter('K');" id="letter">K</a>  
+<a href="javascript:selectLetter('L');" id="letter">L</a>
+<a href="javascript:selectLetter('M');" id="letter">M</a></br></br>
+<a href="javascript:selectLetter('N');" id="letter">N</a>  
+<a href="javascript:selectLetter('O');" id="letter">O</a>  
+<a href="javascript:selectLetter('P');" id="letter">P</a>  
+<a href="javascript:selectLetter('Q');" id="letter">Q</a>  
+<a href="javascript:selectLetter('R');" id="letter">R</a>  
+<a href="javascript:selectLetter('S');" id="letter">S</a>  
+<a href="javascript:selectLetter('T');" id="letter">T</a>  
+<a href="javascript:selectLetter('U');" id="letter">U</a>  
+<a href="javascript:selectLetter('V');" id="letter">V</a>  
+<a href="javascript:selectLetter('W');" id="letter">W</a>  
+<a href="javascript:selectLetter('X');" id="letter">X</a>  
+<a href="javascript:selectLetter('Y');" id="letter">Y</a>  
+<a href="javascript:selectLetter('Z');" id="letter">Z</a></p>
+
+<p><a href="javascript:reset()" id="button">Play/Restart</a></p>
+
+
+
+
+</body>
+</html>
+
